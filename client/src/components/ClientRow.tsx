@@ -1,4 +1,5 @@
 import { Client } from "../types"
+import {FaTrash} from 'react-icons/fa'
 
 type Props = {
 	client: Client
@@ -12,7 +13,9 @@ const ClientRow = ({ client }: Props) => {
 			<td>{email}</td>	
 			<td>{phone}</td>	
 			<td>
-				<button className="btn btn-danger btn-sm"></button>
+				<button className="btn btn-danger btn-sm">
+					<FaTrash />
+				</button>
 			</td>	
 		</tr>
 	)

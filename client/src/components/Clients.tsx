@@ -1,30 +1,19 @@
-import {gql, useQuery} from '@apollo/client'
+import {useQuery} from '@apollo/client'
 import ClientRow from './ClientRow';
 import { Client } from '../types';
-
-const GET_CLIENTS = gql`
-	query getClients {
-		clients {
-			name,
-			id
-			email
-			phone
-		}
-	}
-`
+import {GET_CLIENTS} from '../queries/ClientQueries'
+import Spinner from './Spinner';
 
 const Clients = () => {
-
 	const { data, loading, error } = useQuery(GET_CLIENTS)
 	const clients = data?.clients as Client[]
 	console.log({clients, loading, error});
-	
 
 	return (
 		<>
 			{
 				loading
-					? <div>Loading...</div>
+					? <Spinner/>
 					: (
 					<table className='table table-hover mt-3'>
 							<thead>
