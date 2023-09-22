@@ -7,7 +7,6 @@ import Spinner from './Spinner';
 const Clients = () => {
 	const { data, loading, error } = useQuery(GET_CLIENTS)
 	const clients = data?.clients as Client[]
-	console.log({clients, loading, error});
 
 	return (
 		<>
