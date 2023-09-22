@@ -4,3 +4,9 @@ export type Client = {
 	email: string;
 	phone: string;
 }
+
+export type Project = {
+	id: string;
+	name: string;
+	status: string;
+}
