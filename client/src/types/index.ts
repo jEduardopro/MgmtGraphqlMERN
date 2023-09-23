@@ -8,5 +8,6 @@ export type Client = {
 export type Project = {
 	id: string;
 	name: string;
+	description: string;
 	status: string;
 }

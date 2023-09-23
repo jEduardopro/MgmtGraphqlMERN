@@ -21,20 +21,20 @@ const AddProjectModal = () => {
 			const { projects } = cache.readQuery({ query: GET_PROJECTS })
 			cache.writeQuery({
 				query: GET_PROJECTS,
-				data: {projects: [...projects, addProject]}
+				data: { projects: [...projects, addProject] }
 			})
 		}
 	})
 
 	const onSubmit = (e: FormEvent) => {
 		e.preventDefault()
-		
+
 		if (name === '' || description === '' || status === '') {
 			return alert('Please fill in the required fields')
 		}
 
 		addProject()
-		
+
 		setName('')
 		setDescription('')
 		setStatus('new')
@@ -74,9 +74,9 @@ const AddProjectModal = () => {
 											</div>
 											<div className="mb-3">
 												<label className="form-label">Description</label>
-												<textarea className='form-control' placeholder='Description' 
+												<textarea className='form-control' placeholder='Description'
 													value={description}
-													onChange={(e) => setDescription(e.target.value)} 
+													onChange={(e) => setDescription(e.target.value)}
 												></textarea>
 											</div>
 											<div className="mb-3">
@@ -87,7 +87,7 @@ const AddProjectModal = () => {
 													onChange={(e) => setStatus(e.target.value)}
 												>
 													<option value='new'>New</option>
-													<option value='in_progress'>In Progress</option>
+													<option value='progress'>In Progress</option>
 													<option value='completed'>Completed</option>
 												</select>
 											</div>
